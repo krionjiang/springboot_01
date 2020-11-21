@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>读取作用域中的值</h2>
+    <p>编号：<span th:text="${info.id}">1000</span></p>
+    <p>姓名：<span th:text="${info.name}">小刚</span></p>
+    <p>地址：<span th:text="${info.address}">广州</span></p>
+
+    <h2>在表单中展示数据</h2>
+    <form>
+        <input type="text" th:field="${info.id}" value="${info.id}"/><br/>
+        <input type="text" th:value="${info.name}" value="tom"/><br/>
+    </form>
+
+    <h2>在表单中展示数据</h2>
+    <form th:object="${info}">
+        <input type="text" th:field="*{id}" value="${info.id}"/><br/>
+        <input type="text" th:value="*{name}" value="tom"/><br/>
+        地址：<input type="text" th:value="*{address}" value="北京"/><br/>
+    </form>
+</body>
+</html>
