@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>编辑Admin信心</h2>
+    <form action="" th:action="@{/commit}" method="post">
+        <input th:value="${admin.id}" type="text" readonly="readonly" name="id"/><br/>
+        <input th:value="${admin.name}" type="text" name="name"/><br/>
+        <input th:value="${admin.password}" type="text" name="password"/><br/>
+        <input th:value="${admin.creatTime}" type="text" name=""/><br/>
+        <input th:value="${admin.remake}" type="text" name="remake"/><br/>
+        <button>提交</button>
+    </form>
+</body>
+</html>

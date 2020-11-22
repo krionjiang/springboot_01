@@ -1,9 +1,13 @@
 package com.jlq.domain;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.*;
 
-public class Admin {
+public class Admin implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -16,6 +20,8 @@ public class Admin {
     private Date creatTime;
 
     private String remake;
+
+    private static final long serialVersionUID = 1L;
 
     /**
      * @return id
@@ -85,5 +91,21 @@ public class Admin {
      */
     public void setRemake(String remake) {
         this.remake = remake == null ? null : remake.trim();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", name=").append(name);
+        sb.append(", password=").append(password);
+        sb.append(", creatTime=").append(creatTime);
+        sb.append(", remake=").append(remake);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

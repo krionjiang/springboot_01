@@ -8,7 +8,8 @@
 
     <context id="sqlserverTables" targetRuntime="MyBatis3">
         <!-- 生成的pojo，将implements Serializable-->
-<!--        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="tk.mybatis.MyMapper"/>
         </plugin>
@@ -46,7 +47,7 @@
         </javaModelGenerator>
 
         <!--对应的mapper.xml文件  -->
-        <sqlMapGenerator targetPackage="mappers" targetProject="./src/main/resources">
+        <sqlMapGenerator targetPackage="com.jlq.mapper" targetProject="./src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 

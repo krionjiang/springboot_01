@@ -1,7 +1,36 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /boot
+logging:
+  file:
+    name: log/log.log
 spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/springdb02?serverTimezone=UTC
+      username: root
+      password: root
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  #  devtools:
+#    restart:
+#      enabled: true #热部署开启
+#      additional-paths: src/main/java
+  banner:
+    image:
+      location: banner1.jpg
+      height: 10
+      width: 35
   thymeleaf:
     cache: false   #开发时候关闭缓存，不然不能看到实时画面
-#    mode:
+    #    mode:
     encoding: utf-8
     servlet:
       content-type: text/html #页面格式html
+mybatis:
+  type-aliases-package: com.jlq.domain
+#  mapper-locations: classpath:mapper/*.xml

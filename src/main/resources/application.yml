@@ -33,4 +33,4 @@ spring:
       content-type: text/html #页面格式html
 mybatis:
   type-aliases-package: com.jlq.domain
-  mapper-locations: classpath:mapper/*.xml
+#  mapper-locations: classpath:mapper/*.xml
