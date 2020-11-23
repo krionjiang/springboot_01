@@ -54,7 +54,7 @@ public class AdminController {
             return "redirect:../adminList";
         }
         model.addAttribute("admin",admin);
-        return "edit";
+        return "edit1";
     }
 
     @RequestMapping("commit")

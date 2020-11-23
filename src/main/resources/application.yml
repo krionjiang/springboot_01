@@ -1,7 +1,7 @@
 server:
-  port: 8090
+  port: 8080
   servlet:
-    context-path: /boot
+#    context-path: /boot
 logging:
   file:
     name: log/log.log
@@ -27,10 +27,10 @@ spring:
       width: 35
   thymeleaf:
     cache: false   #开发时候关闭缓存，不然不能看到实时画面
-    #    mode:
+    mode: LEGACYHTML5
     encoding: utf-8
-    servlet:
-      content-type: text/html #页面格式html
+#    servlet:
+#      content-type: text/html #页面格式html
 mybatis:
   type-aliases-package: com.jlq.domain
 #  mapper-locations: classpath:mapper/*.xml
